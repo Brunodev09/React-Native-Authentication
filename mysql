@@ -1,0 +1,55 @@
+Procedure for creating a database and a sample table
+
+Login as the mysql root user to create database:
+$ mysql -u root -p
+
+Sample outputs:
+
+mysql>
+
+Add a database called books, enter:
+mysql> CREATE DATABASE books;
+
+Now, database is created. Use a database with use command, type:
+mysql> USE books;
+
+Next, create a table called authors with name, email and id as fields:
+mysql> CREATE TABLE authors (id INT, name VARCHAR(20), email VARCHAR(20));
+
+To display your tables in books database, enter:
+mysql> SHOW TABLES;
+
+Sample outputs:
+
++-----------------+
+| Tables_in_books |
++-----------------+
+| authors         |
++-----------------+
+1 row in set (0.00 sec)
+
+Finally, add a data i.e. row to table books using INSERT statement, run:
+mysql> INSERT INTO authors (id,name,email) VALUES(1,"Vivek","xuz@abc.com");
+
+Sample outputs:
+
+Query OK, 1 row affected (0.00 sec)
+
+Try to add few more rows to your table:
+mysql> INSERT INTO authors (id,name,email) VALUES(2,"Priya","p@gmail.com");
+mysql> INSERT INTO authors (id,name,email) VALUES(3,"Tom","tom@yahoo.com");
+
+To display all rows i.e. data stored in authors table, enter:
+mysql> SELECT * FROM authors;
+
+Sample outputs:
+
++------+-------+---------------+
+| id   | name  | email         |
++------+-------+---------------+
+|    1 | Vivek | xuz@abc.com   |
+|    2 | Priya | p@gmail.com   |
+|    3 | Tom   | tom@yahoo.com |
++------+-------+---------------+
+3 rows in set (0.00 sec)
+
